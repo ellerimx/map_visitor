@@ -22,6 +22,10 @@ public class Main {
 	double areaTriangulo = triangulo.aceitaVisita(visitorCA);
 	System.out.println("ÁREA DO TRIANGULO = " +areaTriangulo);
 	
+	Trapezio trapezio = new Trapezio(40,15,10);
+	double areaTrapezio = trapezio.aceitaVisita(visitorCA);
+	System.out.println("ÁREA DO TRAPEZIO = " +areaTrapezio);
+	
 	
 	}
 }

@@ -22,6 +22,10 @@ public class VisitorCalcularArea implements VisitorIF {
 		return (t.getBase() * t.getAltura()) / 2;
 	}
 	
+	//calculo da area do trapezio
+	public double visitaTrapezio(Trapezio tz) {
+		return ( (tz.getBaseMaior() + tz.getBaseMenor() ) + tz.getAltura() ) / 2;
+	}
 
 	
 
