@@ -14,6 +14,11 @@ public class Circulo implements ElementoConcretoIF{
 		return this.raio;
 	}
 
+	public void setRaio(double r) {
+		this.raio = r;
+	}
+	
+	
 	@Override
 	public double aceitaVisita(VisitorIF v) {
 		return v.visitaCirculo(this);
