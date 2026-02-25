@@ -1,6 +1,6 @@
 package visitor;
 
-import elemento.Circulo;
+import elemento.*;
 
 public class VisitorCalcularArea implements VisitorIF {
 	
@@ -9,8 +9,20 @@ public class VisitorCalcularArea implements VisitorIF {
 		return 3.14 * c.getRaio() * c.getRaio();
 		
 	}
+
+	// calculo da area do retangulo
+	@Override
+	public double visitaRetangulo(Retangulo r) {
+		
+		return r.getBase() * r.getAltura() ;
+	}
 	
-	//add area das outras figuras
+	// calculo da area do triangulo ((b*a)/2)
+	public double visitaTriangulo(Triangulo t) {
+		return (t.getBase() * t.getAltura()) / 2;
+	}
+	
+
 	
 
 }

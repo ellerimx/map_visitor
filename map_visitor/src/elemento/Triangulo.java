@@ -2,12 +2,12 @@ package elemento;
 
 import visitor.VisitorIF;
 
-public class Retangulo {
-
+public class Triangulo {
+	
 	private double base;
 	private double altura;
 	
-	public Retangulo(double b, double h) {
+	public Triangulo(double b, double h) {
 		this.base = b;
 		this.altura = h;
 	}
@@ -21,6 +21,7 @@ public class Retangulo {
 	}
 	
 	public double aceitaVisita(VisitorIF v) {
-		return v.visitaRetangulo(this);
+		return v.visitaTriangulo(this);
 	}
+
 }
