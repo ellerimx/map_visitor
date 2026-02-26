@@ -14,7 +14,7 @@ public class Main {
 	//calculo do perimetro:
 	VisitorIF visitorCP = new VisitorCalcularPerimetro();
 	//desenhar:
-	//VisitorIF visitorDesenho = new VisitorDesenhar();
+	VisitorIF visitorDesenho = new VisitorDesenhar();
 	
 	System.out.println (" --- CIRCULO ---");	
 	Circulo circulo = new Circulo(15); // raio
@@ -25,8 +25,12 @@ public class Main {
 	double perimetroCirculo = circulo.aceitaVisita(visitorCP);
 	System.out.println("PERIMETRO DO CIRCULO = " + perimetroCirculo);
 	
+	circulo.aceitaVisita(visitorDesenho);
+	System.out.println("MEDIDAS PARA DESENHAR O CIRCULO: raio = "+ circulo.getRaio() + " cm");
+	
 	circulo.aceitaVisita(visitorMax);
 	System.out.println("RAIO MAXIMIZADO = " + circulo.getRaio());	
+	
 	System.out.println ("\n");
 	
 	
@@ -38,6 +42,11 @@ public class Main {
 	
 	double perimetroRetangulo = retangulo.aceitaVisita(visitorCP);
 	System.out.println("PERIMETRO DO RETANGULO = " + perimetroRetangulo);
+	
+	retangulo.aceitaVisita(visitorDesenho);
+	System.out.println("MEDIDAS PARA DESENHAR O RETANGULO: base = "
+	                   + retangulo.getBase() + " cm, " + 
+	                   "altura = "+ retangulo.getAltura() + " cm");
 	
 	retangulo.aceitaVisita(visitorMax);
 	System.out.println("ALTURA MAXIMIZADA = " + retangulo.getAltura());
@@ -56,6 +65,12 @@ public class Main {
 	double perimetroEquilatero = trianguloEqui.aceitaVisita(visitorCP);
 	System.out.println("PERIMETRO DO TRIANGULO EQUILATERO = " + perimetroEquilatero);
 	
+	trianguloEqui.aceitaVisita(visitorDesenho);
+	System.out.println("MEDIDAS PARA DESENHAR O TRIANGULO EQUILATERO: base = "
+	                   + trianguloEqui.getBase() + " cm, altura = "
+	                   + trianguloEqui.getAltura() + " cm, lado = "
+	                   + trianguloEqui.getLado() + " cm");
+	
 	trianguloEqui.aceitaVisita(visitorMax);
 	System.out.println("BASE MAXIMIZADA = " + trianguloEqui.getBase());
 	System.out.println("ALTURA MAXIMIZADA = " + trianguloEqui.getAltura());
@@ -69,11 +84,14 @@ public class Main {
 	double perimetroIso = trianguloIso.aceitaVisita(visitorCP);
 	System.out.println("PERIMETRO DO TRIANGULO ISOSCELES = " + perimetroIso);
 	
+	trianguloIso.aceitaVisita(visitorDesenho);
+	System.out.println("MEDIDAS PARA DESENHAR O TRIANGULO ISOSCELES: base = "
+	                   + trianguloIso.getBase() + " cm, altura = "
+	                   + trianguloIso.getAltura() + " cm");
+	
 	trianguloIso.aceitaVisita(visitorMax);
 	System.out.println("BASE MAXIMIZADA = " + trianguloIso.getBase());
 	System.out.println("ALTURA MAXIMIZADA = " + trianguloIso.getAltura());
-	
-	
 	
 	System.out.println ("\n");
 	
@@ -86,6 +104,14 @@ public class Main {
 	
 	double perimetroTrapezio = trapezio.aceitaVisita(visitorCP);
 	System.out.println("PERIMETRO DO TRAPEZIO = " + perimetroTrapezio);
+	
+	trapezio.aceitaVisita(visitorDesenho);
+	System.out.println("MEDIDAS PARA DESENHAR O TRAPEZIO: B = "
+	                   + trapezio.getBaseMaior() + " cm, b = "
+	                   + trapezio.getBaseMenor() + " cm, h = "
+	                   + trapezio.getAltura() + " cm, l1 = "
+	                   + trapezio.getLado1() + " cm, l2 = "
+	                   + trapezio.getLado2() + " cm");
 	
 	trapezio.aceitaVisita(visitorMax);
 	System.out.println("MEDIDAS MAXIMIZADAS = B:" + trapezio.getBaseMaior()+ "| b:"+trapezio.getBaseMenor() + 
