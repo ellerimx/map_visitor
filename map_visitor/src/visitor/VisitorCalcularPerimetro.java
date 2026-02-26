@@ -16,16 +16,15 @@ public class VisitorCalcularPerimetro implements VisitorIF{
 	}
 
 	
-	// AJUSTAR TRIANGULO E  TRAPEZIO
 	@Override
 	public double visitaTriangulo(Triangulo t) {
-		return 0;
+		return t.getPerimetro(); // perimetro diferente para cada tipo de triangulo
 	}
 
 	@Override
 	// perimetro = soma dos lados + bases
 	public double visitaTrapezio(Trapezio tz) {
-		return 0; 
+		return tz.getBaseMaior() + tz.getBaseMenor() + tz.getAltura() + tz.getLado1() + tz.getLado2();
 	}
 	
 

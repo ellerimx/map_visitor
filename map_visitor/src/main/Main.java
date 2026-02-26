@@ -11,8 +11,13 @@ public class Main {
 	VisitorIF visitorCA = new VisitorCalcularArea();
 	// maximização das medidas:
 	VisitorIF visitorMax = new VisitorMaximizar();
+	//calculo do perimetro:
+	VisitorIF visitorCP = new VisitorCalcularPerimetro();
+	//desenhar:
+	//VisitorIF visitorDesenho = new VisitorDesenhar();
 	
 	System.out.println (" --- CIRCULO ---");
+	
 	Circulo circulo = new Circulo(15);
 	double areaCirculo = circulo.aceitaVisita(visitorCA);
 	System.out.println("ÁREA DO CIRCULO = " + areaCirculo);
@@ -33,16 +38,35 @@ public class Main {
 	
 	System.out.println ("\n");
 	
+	
 	System.out.println (" --- TRIANGULO ---");
-	Triangulo triangulo = new Triangulo(5,6);
-	double areaTriangulo = triangulo.aceitaVisita(visitorCA);
-	System.out.println("ÁREA DO TRIANGULO = " +areaTriangulo);
+	
+	TrianguloEquilatero trianguloEqui = new TrianguloEquilatero(2,4,6); //lado, base, altura
+	TrianguloIsosceles trianguloIso = new TrianguloIsosceles (5,6,4);
+	
+	double areaTrianguloEqui = trianguloEqui.aceitaVisita(visitorCA);
+	System.out.println("ÁREA DO TRIANGULO EQUILATERO = " + areaTrianguloEqui);
+	
+	double perimetroEquilatero = trianguloEqui.aceitaVisita(visitorCP);
+	System.out.println("PERIMETRO DO TRIANGULO EQUILATERO = " + perimetroEquilatero);
 	System.out.println ("\n");
 	
+	double areaTrianguloIso = trianguloIso.aceitaVisita(visitorCA);
+	System.out.println("ÁREA DO TRIANGULO ISOSCELES = " + areaTrianguloIso);
+	
+	double perimetroIso = trianguloIso.aceitaVisita(visitorCP);
+	System.out.println("PERIMETRO DO TRIANGULO ISOSCELES = " + perimetroIso);
+	System.out.println ("\n");
+	
+	
 	System.out.println (" --- TRAPEZIO ---");
-	Trapezio trapezio = new Trapezio(40,15,10);
+	
+	Trapezio trapezio = new Trapezio(40,20,8, 10, 10); // base maior, base menor, altura, lado1 e lado2
 	double areaTrapezio = trapezio.aceitaVisita(visitorCA);
 	System.out.println("ÁREA DO TRAPEZIO = " +areaTrapezio);
+	
+	double perimetroTrapezio = trapezio.aceitaVisita(visitorCP);
+	System.out.println("PERIMETRO DO TRAPEZIO = " + perimetroTrapezio);
 	System.out.println ("\n");
 	
 	
