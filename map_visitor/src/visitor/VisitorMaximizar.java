@@ -7,28 +7,33 @@ public class VisitorMaximizar implements VisitorIF{
 	
 	@Override
 	public double visitaCirculo(Circulo c) {
-		c.setRaio(c.getRaio() * 2); // maximizar a alterar o valor do raio
+		c.setRaio(c.getRaio() * 2); // maximizar e alterar o valor do raio
 		return c.getRaio(); // nova medida do raio
-	}
+	}	
+	
 
 	@Override
 	public double visitaRetangulo(Retangulo r) {
 		r.setAltura(r.getAltura() * 2) ;
 		r.setBase(r.getBase() * 2);
-		System.out.println("BASE MAXIMIZADA = " +r.getBase()); // base dobrada
-		return r.getAltura(); // altura dobrada
+		return 0;
 	}
-	// ajeitar triangulo e trapezio
 	
 	@Override
 	public double visitaTriangulo(Triangulo t) {
-		// TODO Auto-generated method stub
+		t.setAltura(t.getAltura() * 2);
+		t.setBase(t.getBase() * 2);
 		return 0;
 	}
+	
 
 	@Override
 	public double visitaTrapezio(Trapezio tz) {
-		// TODO Auto-generated method stub
+		tz.setLado1(tz.getLado1() * 2); // dobrar lado 1
+		tz.setLado2(tz.getLado2() * 2); // dobrar lado 2
+		tz.setBaseMaior(tz.getBaseMaior() * 2); // dobrar base maior
+		tz.setBaseMenor(tz.getBaseMenor() * 2);
+		tz.setAltura(tz.getAltura() * 2);
 		return 0;
 	}
 

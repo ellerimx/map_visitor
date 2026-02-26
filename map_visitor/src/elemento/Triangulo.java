@@ -18,9 +18,18 @@ public abstract class Triangulo implements ElementoConcretoIF {
     public double getBase() {
         return base;
     }
+    
+    public void setBase(double b) {
+    	this.base = b;
+    }
+   
 
     public double getAltura() {
         return altura;
+    }
+    
+    public void setAltura(double h) {
+    	this.altura = h;
     }
     
     @Override
