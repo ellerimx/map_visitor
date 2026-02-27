@@ -38,7 +38,6 @@ class VisitorMaximizarTest {
         assertEquals(12, t.getAltura(), 0.000001);
         assertEquals(0, retorno, 0.000001);
 
-        // Observação: lado NÃO é dobrado no seu código (somente base/altura)
         assertEquals(2, t.getLado(), 0.000001);
     }
 

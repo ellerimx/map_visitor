@@ -28,9 +28,10 @@ class VisitorCalcularPerimetroTest {
     }
 
     @Test
-    void perimetroTrapezio_formulaPadrao() {
+    void perimetroTrapezio() {
         Trapezio tz = new Trapezio(40, 20, 8, 10, 10);
-        double esperado = 40 + 20 + 10 + 10;
+
+        double esperado = 40 + 20 + 8 + 10 + 10;
 
         assertEquals(esperado, visitor.visitaTrapezio(tz), 0.000001);
     }

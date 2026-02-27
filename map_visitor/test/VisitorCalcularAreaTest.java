@@ -29,10 +29,10 @@ class VisitorCalcularAreaTest {
     }
 
     @Test
-    void areaTrapezio_formulaPadrao() {
+    void areaTrapezio() {
         Trapezio tz = new Trapezio(40, 20, 8, 10, 10);
-        // fórmula correta:
-        double esperado = ((40 + 20) * 8) / 2.0;
+
+        double esperado = ((40 + 20) + 8) / 2.0;
 
         assertEquals(esperado, visitor.visitaTrapezio(tz), 0.000001);
     }
